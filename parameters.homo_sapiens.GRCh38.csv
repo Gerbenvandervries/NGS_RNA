@@ -115,7 +115,7 @@ rnaSeQCGTF,/apps/data/GAD/gtf/GrCH38/gencode.v38.annotation.patched_contigs.gtf
 rnaSeQCDir,${projectResultsDir}/RNASeQC
 
 ##### GENOME,INDEX,ANNOTATION FILES #####
-geneAnnotationTxt,${ensembleDir}/${annotationFileName}.${ensembleReleaseVersion}.annotation.geneIds.txt.gz
+#geneAnnotationTxt,${ensembleDir}/${annotationFileName}.${ensembleReleaseVersion}.annotation.geneIds.txt.gz
 annotationGtf,/apps/data/Ensembl/GrCh38.115/pub/release-115/gtf/homo_sapiens/Homo_sapiens.GRCh38.115.gtf
 houseKeepingGenesBed,/apps/data/GAD/gtf/GrCH38/hg38.HouseKeepingGenes.bed
 #annotationTxt,/apps/data/GAD/others/GRCh37.refseq.with_genes.txt
