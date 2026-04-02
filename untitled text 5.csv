@@ -1,0 +1,39 @@
+wel belangrijk, kan deze worden gelift overd?
+
+annotationTxt,/apps/data/GAD/others/GRCh37.refseq.with_genes.txt <- gebruikt in leafcutter, wel abandoneware, wel de moeite waard? lift over kan niet
+leafcutterAllExon,"/apps/data/GAD/others/gencode_GRCh37_all_exons.txt.gz"
+
+
+Worden in leafcutter gebruikt, abandoneware, misschien niet meer in investeren.
+#gencodeHg19AllExons,/apps/data/Ensembl/GrCh38.115/pub/release-115/gtf/homo_sapiens/Homo_sapiens.GRCh37.75_genid.txt
+#annotationTxt,/apps/data/GAD/others/GRCh37.refseq.with_genes.txt
+
+
+
+
+-naar kijken hoe dit zit bij welke genoom versie dit hoort-
+
+indicesDir,${dataDir}/ftp.broadinstitute.org/bundle/2.8/${genome}/ <- kan weg
+indexFileFastaIndex,${indexSpecies}.fai 
+indexChrIntervalList,${indicesDir}/${indexFileID}.chr${chr}.interval_list
+indexFileDictionary,${indexSpecies}.dict
+MillsAnd1000GGoldGtandard,/apps/data/1000G/phase1/Mills_and_1000G_gold_standard <- kan weg, denken we
+ensembleDir,${dataDir}/ftp.broadinstitute.org/bundle/2.8/${genome}/gtf/${speciesFileName}/ <- kan weg, denken we
+spliceaiSnv,/apps/data/SpliceAI/GRCh37/spliceai_scores.raw.snv.vcf.gz <- kan weg dnken we
+spliceaiIndel,/apps/data/SpliceAI/GRCh37/spliceai_scores.raw.indel.vcf.gz
+
+rnaSeQCGTF,/apps/data/GAD/gtf/gencode.v19.annotation.patched_contigs.genes.gtf <- geen idee waar voor dit wordt gebruikt
+gtexJunc,/apps/data/GAD/others/GTEx_v7_bflb_junctions.gct <- bij GTeX kijken 
+
+Wordt deze wel gebruitk in de pipeline?
+annotationFile,${dataDir}Ensembl/GrCh38.115/pub/release-115/gtf/${speciesFileName}/${annotationFileName}.75_nodupes_genid.txt
+
+
+-is deze goed?-
+annotationIntervalList,/apps/data/Ensembl/GrCh38.115/pub/release-115/gtf/homo_sapiens/Homo_sapiens.GRCh37.75.rrna.interval_list
+
+
+
+rnaSeQCGTF,/apps/data/GAD/gtf/gencode.v38.annotation.gtf wordt gebruikt in de RseQC stap.
+ik heb gencode.v38.annotation.gtf gedownload, deze files in 3.000.000 regels langer dan de gencode.v38.annotation.gtf.
+Weet je nog waar je deze vandaan hebt gehaald? 

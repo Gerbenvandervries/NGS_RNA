@@ -111,7 +111,7 @@ sampleConcordanceVcf,${intermediateDir}/${externalSampleID}.concordance.vcf
 ##### Protocols 3,6  (HTSeq count, MakeExpressionTable) #####
 sampleHTseqExpressionText,${intermediateDir}/${externalSampleID}.counts.txt
 projectHTseqExpressionTable,${intermediateDir}/${project}.expression.counts.table
-rnaSeQCGTF,/apps/data/GAD/gtf/GrCH38/gencode.v38.annotation.patched_contigs.gtf
+rnaSeQCGTF,/apps/data/GAD/gtf/GrCH38/gencode.v49.annotation.patched_contigs.gtf
 rnaSeQCDir,${projectResultsDir}/RNASeQC
 
 ##### GENOME,INDEX,ANNOTATION FILES #####
