@@ -122,7 +122,7 @@ houseKeepingGenesBed,/apps/data/GAD/gtf/GrCH38/hg38.HouseKeepingGenes.bed
 #gencodeHg19AllExons,/apps/data/Ensembl/GrCh38.115/pub/release-115/gtf/homo_sapiens/Homo_sapiens.GRCh37.75_genid.txt
 annotationRefFlat,/apps/data/Ensembl/GrCh38.115/pub/release-115/gtf/homo_sapiens/Homo_sapiens.GRCh38.115.gtf.annotation.refFlat
 annotationIntervalList,/apps/data/Ensembl/GrCh37.75/pub/release-75/gtf/homo_sapiens/Homo_sapiens.GRCh37.75.rrna.interval_list
-#leafcutterAllExon,"/apps/data/GAD/others/gencode_GRCh37_all_exons.txt.gz"
+#leafcutterAllExon,/apps/data/GAD/others/gencode_GRCh37_all_exons.txt.gz
 gtexJunc,/apps/data/GAD/others/GTEx_Analysis_2025-08-22_v11_STARv2.7.11b_junctions.gct
 omimList,/apps/data/GAD/others/OMIM2.list
 indexFile,${indexSpecies}
