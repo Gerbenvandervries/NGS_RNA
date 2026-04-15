@@ -120,7 +120,7 @@ annotationIntervalList,/apps/data/Ensembl/GrCh37.75/pub/release-75/gtf/homo_sapi
 gtexJunc,/apps/data/GAD/others/GTEx_Analysis_2025-08-22_v11_STARv2.7.11b_junctions.gct
 omimList,/apps/data/GAD/others/OMIM2.list
 indexFile,${indexSpecies}
-dbsnpVcf,/apps/data/dbSNP/GCF_000001405.40.renamedChr.vcf.gz
+#dbsnpVcf,/apps/data/dbSNP/GCF_000001405.40.renamedChr.vcf.gz
 starIndex,/apps/data/Ensembl/GrCh38.115/pub/release-115/fasta/homo_sapiens/STAR-2.7.9a-GCC-11.3.0/
 
 #### GENOME VARIABLES ####
