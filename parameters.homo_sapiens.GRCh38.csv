@@ -56,8 +56,6 @@ tinDir,${intermediateDir}/TIN/
 peEnd1BarcodeFastQcZip,${intermediateDir}/${filePrefix}_${barcode}_1.fq_fastqc.zip
 peEnd2BarcodeFastQcZip,${intermediateDir}/${filePrefix}_${barcode}_2.fq_fastqc.zip
 srBarcodeFastQcZip,${intermediateDir}/${filePrefix}_${barcode}.fq_fastqc.zip
-#barcodeFastQcFolder,${intermediateDir}/${filePrefix}_${barcode}.fq_fastqc
-#barcodeFastQcFolderPE,${intermediateDir}/${filePrefix}_${barcode}_1.fq_fastqc
 alignedSam,${intermediateDir}/${filePrefix}_${barcode}.sam
 alignedBam,${intermediateDir}/${filePrefix}_${barcode}.bam
 alignedFilteredBam,${intermediateDir}/${filePrefix}_${barcode}.bam
@@ -115,19 +113,16 @@ rnaSeQCGTF,/apps/data/GAD/gtf/GrCH38/gencode.v49.annotation.stranded.patched_con
 rnaSeQCDir,${projectResultsDir}/RNASeQC
 
 ##### GENOME,INDEX,ANNOTATION FILES #####
-#geneAnnotationTxt,${ensembleDir}/${annotationFileName}.${ensembleReleaseVersion}.annotation.geneIds.txt.gz
 annotationGtf,/apps/data/Ensembl/GrCh38.115/pub/release-115/gtf/homo_sapiens/Homo_sapiens.GRCh38.115.gtf
 houseKeepingGenesBed,/apps/data/GAD/gtf/GrCH38/hg38.HouseKeepingGenes.bed
-#annotationTxt,/apps/data/GAD/others/GRCh37.refseq.with_genes.txt
-#gencodeHg19AllExons,/apps/data/Ensembl/GrCh38.115/pub/release-115/gtf/homo_sapiens/Homo_sapiens.GRCh37.75_genid.txt
 annotationRefFlat,/apps/data/Ensembl/GrCh38.115/pub/release-115/gtf/homo_sapiens/Homo_sapiens.GRCh38.115.gtf.annotation.refFlat
 annotationIntervalList,/apps/data/Ensembl/GrCh37.75/pub/release-75/gtf/homo_sapiens/Homo_sapiens.GRCh37.75.rrna.interval_list
-#leafcutterAllExon,/apps/data/GAD/others/gencode_GRCh37_all_exons.txt.gz
 gtexJunc,/apps/data/GAD/others/GTEx_Analysis_2025-08-22_v11_STARv2.7.11b_junctions.gct
 omimList,/apps/data/GAD/others/OMIM2.list
 indexFile,${indexSpecies}
 dbsnpVcf,/apps/data/dbSNP/GCF_000001405.40.renamedChr.vcf.gz
 starIndex,/apps/data/Ensembl/GrCh38.115/pub/release-115/fasta/homo_sapiens/STAR-2.7.9a-GCC-11.3.0/
+
 #### GENOME VARIABLES ####
 genome,GRCh38
 ensembleReleaseVersion,115
@@ -137,7 +132,6 @@ annotationFileName,Homo_sapiens.${genome}
 speciesFileName,homo_sapiens
 indexFileID,Homo_sapiens.GRCh38.dna.primary_assembly.fa
 indexFolderName,human_g1k_v38
-#dbSNPFileID,dbsnp_138.${genome}
 indicesDir,${dataDir}/ftp.broadinstitute.org/bundle/2.8/${genome}/
 dbSNPDir,/apps/data/GAD/dbnsp/
 indexFileFastaIndex,${indexSpecies}.fai
@@ -145,9 +139,18 @@ indexSpecies,/apps/data/Ensembl/GrCh38.115/pub/release-115/fasta/homo_sapiens/${
 indexChrIntervalList,${indicesDir}/${indexFileID}.chr${chr}.interval_list
 indexFileDictionary,${indexSpecies}.dict
 bed12,${dataDir}/Ensembl/GrCh38.115/pub/release-115/gtf/homo_sapiens/hg38.refGene.bed12
+comonSnpsBed,/apps/data/GAD/gtf/GrCH38/SNP_GRCh38_hg38_concordanceCheckSnps_GRCh38_woChr.bed
+
+##########not used#################
+#geneAnnotationTxt,${ensembleDir}/${annotationFileName}.${ensembleReleaseVersion}.annotation.geneIds.txt.gz
+#annotationTxt,/apps/data/GAD/others/GRCh37.refseq.with_genes.txt
+#gencodeHg19AllExons,/apps/data/Ensembl/GrCh38.115/pub/release-115/gtf/homo_sapiens/Homo_sapiens.GRCh37.75_genid.txt
+#leafcutterAllExon,/apps/data/GAD/others/gencode_GRCh37_all_exons.txt.gz
+#dbSNPFileID,dbsnp_138.${genome}
 #MillsAnd1000GGoldGtandard,/apps/data/1000G/phase1/Mills_and_1000G_gold_standard
 #annotationFile,${dataDir}/Ensembl/GrCh37.75/pub/release-75/gtf/${speciesFileName}/${annotationFileName}.75_nodupes_genid.txt
 #ensembleDir,${dataDir}/ftp.broadinstitute.org/bundle/2.8/${genome}/gtf/${speciesFileName}/
 #spliceaiSnv,/apps/data/SpliceAI/GRCh37/spliceai_scores.raw.snv.vcf.gz
 #spliceaiIndel,/apps/data/SpliceAI/GRCh37/spliceai_scores.raw.indel.vcf.gz
-comonSnpsBed,/apps/data/GAD/gtf/GrCH38/SNP_GRCh38_hg38_concordanceCheckSnps_GRCh38_woChr.bed
+#barcodeFastQcFolder,${intermediateDir}/${filePrefix}_${barcode}.fq_fastqc
+#barcodeFastQcFolderPE,${intermediateDir}/${filePrefix}_${barcode}_1.fq_fastqc
