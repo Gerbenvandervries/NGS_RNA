@@ -23,9 +23,11 @@ host=$(hostname -s)
 if [[ "${host}" == tl-* ]]
 then
 	TMP="tmp08"
+	headnode=talos
 elif [[ "${host}" == hc-* ]]
 then
 	TMP="tmp09"
+        headnode=hyperchicken
 else
 	echo "No valid host(${host}) to run Jenkins."
 fi
@@ -181,7 +183,7 @@ perl -pi -e "s|/groups/umcg-atd/tmp01/|/groups/umcg-atd/${TMP}/|g" "${_generated
 perl -p -e "s|${_sheetName}|${_projectName}|g" "${_generatedScriptsFolder}/${SAMPLESHEET}" > "${_generatedScriptsFolder}/${SAMPLESHEET}.tmp"
 mv -v "${_generatedScriptsFolder}/${SAMPLESHEET}"{.tmp,}
 cd "${_generatedScriptsFolder}/"
-#perl -pi -e 's|parameters.\${host}|parameters.talos|g' generate_template.sh
+perl -pi -e 's|parameters.\${host}|parameters.${headnode}|g' generate_template.sh
 
 bash generate_template.sh -c "${EBROOTNGS_RNA}/create_external_samples_ngs_projects_workflow.csv" -g umcg-atd -p "${SAMPLESHEET%.csv}" -w "${_generatedScriptsFolder}" -f "${SAMPLESHEET%.csv}" -t "${TMP}"
 
