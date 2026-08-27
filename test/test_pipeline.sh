@@ -200,10 +200,10 @@ perl -pi -e 's|-ERC GVCF|-L 1:17383226-183837051 \\\n  -ERC GVCF|' s*_GatkGenoty
 perl -pi -e 's|rsync -av .*.vip|#rsync -av .*.vip|g' s*_CopyToResultsDir_*.sh
 #perl -pi -e 's|mem 40gb|mem 10gb|' *.sh
 #perl -pi -e 's|mem 30gb|mem 10gb|' *.sh
-perl -pi -e 's|mem 17gb|mem 5gb|' *.sh
-perl -pi -e 's|mem 20gb|mem 5gb|' *.sh
-perl -pi -e 's|mem 15gb|mem 5gb|' *.sh
-perl -pi -e 's|cpus-per-task 8|cpus-per-task 6|' *.sh
+#perl -pi -e 's|mem 17gb|mem 5gb|' *.sh
+#perl -pi -e 's|mem 20gb|mem 5gb|' *.sh
+#perl -pi -e 's|mem 15gb|mem 5gb|' *.sh
+#perl -pi -e 's|cpus-per-task 8|cpus-per-task 6|' *.sh
 perl -pi -e 's|--time=16:00:00|--time=05:59:00|' *.sh
 perl -pi -e 's|--time=23:00:00|--time=05:59:00|' *.sh
 perl -pi -e 's|--time=23:59:00|--time=05:59:00|' *.sh
