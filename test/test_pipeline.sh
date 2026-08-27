@@ -20,14 +20,14 @@ GROUP='umcg-atd'
 
 host=$(hostname -s)
 
-if [[ "${host}" == tl-* ]]
+if [[ "${host}" == talos ]]
 then
 	TMP="tmp08"
 	headnode=talos
-elif [[ "${host}" == hc-* ]]
+elif [[ "${host}" == hyperchicken ]]
 then
 	TMP="tmp09"
-        headnode=hyperchicken
+    headnode=hyperchicken
 else
 	echo "No valid host(${host}) to run Jenkins."
 fi
@@ -166,9 +166,10 @@ rm -rfv "/groups/${GROUP}/${TMP}/projects/NGS_RNA/${_projectName}"
 rm -rfv "/groups/${GROUP}/${TMP}/tmp/NGS_RNA/${_projectName}"
 rm -rfv "/groups/${GROUP}/${TMP}/tmp/NGS_RNA/betaAutotest/runs/${_projectName}"
 mkdir -p	"${WORKDIR}"/generatedscripts
-mkdir -p	"${WORKDIR}/rawdata/ngs/MY_TEST_BAM_PROJECT"
+#mkdir -p	"${WORKDIR}/rawdata/ngs/MY_TEST_BAM_PROJECT"
+mkdir -p	"/groups/${GROUP}/${TMP}/rawdata/ngs/MY_TEST_BAM_PROJECT"
 
-rsync -r --verbose --recursive --links --no-perms --times --group --no-owner --devices --specials "${PIPELINE}/test/rawdata/MY_TEST_BAM_PROJECT/"SRR1552906[249]_[12].fq.gz "${WORKDIR}/rawdata/ngs/MY_TEST_BAM_PROJECT/"
+rsync -r --verbose --recursive --links --no-perms --times --group --no-owner --devices --specials "${PIPELINE}/test/rawdata/MY_TEST_BAM_PROJECT/"SRR1552906[249]_[12].fq.gz "/groups/${GROUP}/${TMP}/rawdata/ngs/MY_TEST_BAM_PROJECT/"
 
 log "copy generate template"
 cp "${PIPELINE}/templates/generate_template.sh" "${_generatedScriptsFolder}/generate_template.sh"
@@ -197,7 +198,12 @@ cd "/groups/${GROUP}/${TMP}/projects/NGS_RNA/${_projectName}/run01/jobs/"
 perl -pi -e 's|-ERC GVCF|-L 1:17383226-183837051 \\\n  -ERC GVCF|' s*_GatkHaplotypeCallerGvcf_*.sh
 perl -pi -e 's|-ERC GVCF|-L 1:17383226-183837051 \\\n  -ERC GVCF|' s*_GatkGenotypeGvcf_*.sh
 perl -pi -e 's|rsync -av .*.vip|#rsync -av .*.vip|g' s*_CopyToResultsDir_*.sh
-perl -pi -e 's|mem=40gb|mem=10gb|' *.sh
+#perl -pi -e 's|mem 40gb|mem 10gb|' *.sh
+#perl -pi -e 's|mem 30gb|mem 10gb|' *.sh
+perl -pi -e 's|mem 17gb|mem 5gb|' *.sh
+perl -pi -e 's|mem 20gb|mem 5gb|' *.sh
+perl -pi -e 's|mem 15gb|mem 5gb|' *.sh
+perl -pi -e 's|cpus-per-task 8|cpus-per-task 6|' *.sh
 perl -pi -e 's|--time=16:00:00|--time=05:59:00|' *.sh
 perl -pi -e 's|--time=23:00:00|--time=05:59:00|' *.sh
 perl -pi -e 's|--time=23:59:00|--time=05:59:00|' *.sh
