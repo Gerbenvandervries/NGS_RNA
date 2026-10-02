@@ -1,0 +1,25 @@
+Bootstrap: localimage
+From: openjdk-8.sif
+
+%help
+    eqtl-mapping-pipeline
+    More information: www.molgenis.org/systemsgenetics/QTL-mapping-pipeline
+
+%post    
+    # install
+    apk add gcompat
+    apk add --virtual=.build-dependencies curl
+
+    mkdir -p /opt/eqtl-mapping-pipeline/lib
+    curl --fail --silent --show-error --location --output /opt/eqtl-mapping-pipeline/lib/eqtl-mapping-pipeline-1.4.0-SNAPSHOT-dist.tar.gz "https://github.com/molgenis/systemsgenetics/releases/download/1.4.0_18-11.1/eqtl-mapping-pipeline-1.4.0-SNAPSHOT-dist.tar.gz"
+    cd /opt/eqtl-mapping-pipeline/lib/
+    tar -zxvf eqtl-mapping-pipeline-1.4.0-SNAPSHOT-dist.tar.gz
+  
+    echo "c730c07e04d8ad91f71d947884e61fdeeaa4dbf513c31d717942a31b5c14caec  /opt/eqtl-mapping-pipeline/lib/eqtl-mapping-pipeline-1.4.0-SNAPSHOT/eqtl-mapping-pipeline.jar" | sha256sum -c
+
+    # cleanup
+    apk del .build-dependencies
+    rm -rf /var/cache/apk/*
+
+%runscript
+    exec java -jar /opt/eqtl-mapping-pipeline/lib/eqtl-mapping-pipeline-1.4.0-SNAPSHOT/eqtl-mapping-pipeline.jar "$@"
